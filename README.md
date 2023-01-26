@@ -1,7 +1,8 @@
 1: Otwórz terminal/console
-2: Wpisz komendę npm install
-3: Wpisz php artisan serve
-4: Należy również odpalić npm run dev
+2: Wpisz komendę composer install
+3: Wpisz komendę npm install
+4: Wpisz php artisan serve
+5: Należy również odpalić npm run dev
 
 Baza danych:->
 

@@ -35,6 +35,7 @@ Route::post('/profile/edit', [UserController::class, 'update']) -> name('updateU
 
 Route::get('pages/pageUser', [UserController::class, 'show']) -> name('showUser');
 
+//admin
 Route::get('/admin/users', [UserController::class, 'adminShow']) -> name('adminShowUser');
 Route::get('/admin/users/delete/{x}', [UserController::class, 'destroy']) -> name('adminDeleteUser');
 Route::get('/admin/users/{x}', [UserController::class, 'showOther']);
@@ -45,6 +46,7 @@ Route::post('/pages/zamow', [OrdersController::class, 'store']) -> name('store')
 
 Route::get('/pages/historia', [OrdersController::class, 'show']) -> name('orderShow');
 
+//admin
 Route::get('/admin/orders', [OrdersController::class, 'adminShow']) -> name('AdminShowOrder');
 
 // comment

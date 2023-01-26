@@ -81,7 +81,6 @@ class UserController extends Controller
         }
         else {
             return redirect()->route('showHome');
-            return route('showCoffes');
         }
     }
 
@@ -117,12 +116,12 @@ class UserController extends Controller
     }
 
     public function adminShow() {
-        if(\Auth::user()->admin != 1){
-            return redirect()->route('home');
+        if(\Auth::user() && \Auth::user()->admin == 1){
+            $users = User::all();
+            return view('pages.admin.users', compact('users'));
         }
-
-        $users = User::all();
-        return view('pages.admin.users', compact('users'));
+        return redirect()->route('showHome');
+        
     }
 
     /**
@@ -133,11 +132,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if(\Auth::user()->admin != 1) {
-            return redirect()->route('home');
+        if(\Auth::user() && \Auth::user()->admin == 1) {
+            $user = User::find($id);
+            $user->delete();
+            return redirect()->route('adminShowUser');
+            
         }
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('adminShowUser');
+        return redirect()->route('showHome');
     }
 }

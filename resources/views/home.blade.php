@@ -26,12 +26,12 @@
                     <a href="{{url('/pages/jedzenie')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="food">Coś słodkiego</a>
                     <a href="{{url('/pages/historia')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="zestawy">Historia zamówień</a>
                     <a href="{{url('/pages/zamow')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="form_zestaw">Złóż zamówienie</a>
-                    <a href="../pages/comments')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="galllery">Opinie</a>
+                    <a href="{{url('/pages/comments')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="galllery">Opinie</a>
                     @guest
                     @else
                     @if (\Auth::user()->admin == 1)
-                    <a href="{{url('/admin/users')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="galllery">Przegląd użytkowników</a>
-                    <a href="{{url('/admin/orders')}}" class="list-group-item list-group-item-action list-group-item-light p-3"  id="galllery">Przegląd zamówień</a>
+                    <a href="{{url('/admin/users')}}" class="list-group-item list-group-item-action list-group-item-light p-3" >Przegląd użytkowników</a>
+                    <a href="{{url('/admin/orders')}}" class="list-group-item list-group-item-action list-group-item-light p-3">Przegląd zamówień</a>
                     @endif
                     @endguest
                 </div>
@@ -70,7 +70,7 @@
                                             class="dropdown-item" 
                                             href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();""
+                                            document.getElementById('logout-form').submit();"
                                         >
                                             {{ __('Logout') }}
                                         </a>

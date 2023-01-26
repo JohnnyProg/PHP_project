@@ -39,8 +39,8 @@
             <div class="float-end mt-2 pt-1">
                 <button type="submit" class="btn btn-primary btn-sm">Wyślij </button>
             </div>
+            </form>
             </div>
-        </form>
         </div>
         </div>
     </div>

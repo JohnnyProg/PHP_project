@@ -107,7 +107,7 @@
                 @guest
                 <input id="street" type="text" name="street" class="form-control" required>
                 @else
-                <input id="street" type="text" name="street" class="form-control" value="{{\Auth::user()->street}}"required>
+                <input id="street" type="text" name="street" class="form-control" value="{{\Auth::user()->street}}" required>
                 @endguest
             </div>
 
